@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+:root {
+    --blue: #2a5196;
+    --blue-light: #9dc0ff;
+    --grey: #555;
+
+    --menu-height: 60px;
+    --max-width: 1000px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+/* HEADER */
+
+body {
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    line-height: 1.25;
+}
+
+header {
+    background-color: var(--blue);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    display: block;
+    flex-wrap: nowrap;
+    height: var(--menu-height);
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+nav > a {
+    align-items: center;
+    display: flex;
+    padding-left: 0.5em;
+    text-decoration: none;
+}
+
+/* Header: Logo */
+
+nav figure {
+    height: var(--menu-height);
+    margin: 0;
+}
+
+nav figure img {
+    height: 100%;
+}
+
+/* Header: Company name  */
+
+.company-name {
+    align-items: center;
+    display: flex;
+}
+
+.company-name p {
+    color: #fff;
+    display: none;
+    font-family: 'Passion One', sans-serif;
+    font-size: 1.25em;
+    margin: 0;
+}
+
+@media only screen and (min-width: 260px) {
+    .company-name p {
+        display: block;
+        font-size: 1.25em;
+        transition: font-size 0.25s ease-in-out;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .company-name p {
+        font-size: 2em;
+        transition: font-size 0.25s ease-in-out;
+    }
+}
+
+/* Header: Menu lists reset */
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header li a {
+    color: #fff;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header: Hamburger menu */
+
+.hamburger-menu {
+    cursor: pointer;
+    display: block;
+    padding: 0 1.25em
+}
+
+.bar {
+    background-color: #fff;
+    display: block;
+    height: 3px;
+    margin: 5px auto;
+    width: 25px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media only screen and (min-width: 640px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+/* Header: Mobile menu */
+
+.mobile-menu {
+    display: flex;
+    height: 0;
+    justify-content: end;
+    overflow: hidden;
+    transition: height .25s ease-in-out;
+    width: 100%;
+}
+
+.mobile-menu.active {
+    display: flex;
+    height: calc(100vh - var(--menu-height));
+    transition: height .25s ease-in-out;
+}
+
+.mobile-menu ul {
+    background: var(--blue);
+    opacity: 0.85;
+    padding: 2em;
+    width: 25%;
+}
+
+.mobile-menu ul li {
+    opacity: 0;
+    padding-bottom: 1em;
+    position: relative;
+    right: calc(-100% - 2em);
+    transition: opacity 0.25s;
+}
+
+.mobile-menu.active ul li {
+    opacity: 1;
+    right: 0;
+    transition: right 0.25s ease-in-out;
+    transition-delay: 0.25s;
+}
+
+/* Header: Desktop menu */
+
+nav li {
+    padding-right: 1.5em;
+}
+
+@media only screen and (min-width: 640px) {
+    nav ul {
+        display: flex;
+    }
+}
+
+/* HERO */
+
+.hero {
+    align-items: center;
+    background-image: url('../img/canoe.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2em;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 3em;
+    line-height: 1.2;
+    text-shadow: 0 0 5px #000;
+}
+
+.hero .cta {
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+    box-shadow: 0 0 5px #000;
+    margin: 1.5em auto;
+    transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.hero .cta:hover {
+    background-color: var(--blue-light);
+    box-shadow: 0 0 0 #000;
+    transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.hero .cta a {
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    font-size: 1.25em;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: color 0.125s ease-in-out;
+}
+
+.hero .cta a:hover {
+    color: var(--blue);
+    transition: color 0.125s ease-in-out;
+}
+
+/* MAIN */
+
+main {
+    padding: 0 1em;
+}
+
+main h2 {
+    color: var(--blue);
+    font-size: 2em;
+    margin: 1em auto 0.5em;
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+.main-container section {
+    margin-bottom: 3em;
+}
+
+.main-container section::after {
+    background-color: var(--blue);
+    content: '';
+    display: inline-block;
+    height: 2px;
+    margin-top: 1em;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-container {
+        flex-wrap: nowrap;
+        gap: 3em;
+    }
+
+    .main-container section::after {
+        background-color: transparent;
+    }
+}
+
+/* Main: Section */
+
+main section {
+    width: 100%;
+}
+
+main section figure {
+    margin: 0;
+    width: 100%;
+}
+
+main section figure img {
+    width: 100%;
+}
+
+/* Main: Adventure figure */
+
+.main-container section figure {
+    overflow: hidden;
+}
+
+.main-container section figure img {
+    transform: scale(1) rotate(0);
+    transition: transform 0.25s ease-in-out;
+}
+
+.main-container section figure:hover img {
+    transform: scale(1.25) rotate(-6deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-container section figure {
+        max-height: 150px;
+    }
+
+    .main-container section figure a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-container section figure a img {
+        display: flex;
+    }
+}
+
+/* Main: Adventure header */
+
+.adventure-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.adventure-header * {
+    width: 100%;
+}
+
+/* Main: Adventure place */
+
+.adventure-place {
+    margin-top: 1em;
+    width: 50%;
+}
+
+.adventure-place h3 a {
+    color: green;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+/* Main: Adventure data */
+
+.adventure-data {
+    display: block;
+    margin: 1em 0;
+}
+
+.adventure-data div {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.adventure-data figure {
+    position: relative;
+    top: 2px;
+    width: 16px;
+}
+
+.adventure-data .contour {
+    fill: var(--blue);
+}
+
+.adventure-data .background {
+    fill: #fff;
+}
+
+.adventure-data p {
+    color: var(--grey);
+    font-weight: 700;
+}
+.adventure-data p[data-date]::before {
+    content: 'Date:';
+    padding: 0 .25em;
+}
+
+.adventure-data p[data-duration]::before {
+    content: 'Duration:';
+    padding: 0 .25em;
+}
+
+@media only screen and (min-width: 480px) {
+    .adventure-data {
+        width: auto;
+    }
+}
+
+/* Main: Adventure summary */
+
+.adventure-summary {
+    padding-top: 1em;
+}
+
+.adventure-summary::before {
+    color: var(--blue);
+    content: 'Summary';
+    display: block;
+    font-size: 1.25em;
+    font-weight: 700;
+    padding-bottom: .25em;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin: 0 auto;
+    max-width: var(--max-width);
+    padding: 1em;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer-item h4 {
+    font-size: 1.25em;
+    padding-bottom: 0.75em;
+}
+
+.footer-item p {
+    padding-bottom: 0.5em;
+}
+
+.footer-item a {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 480px) {
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footer-item {
+        width: calc(50% - 3em);
+    }
+
+    .footer-item:last-child {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footer-container {
+        flex-wrap: nowrap;
+    }
+
+    .footer-item,
+    .footer-item:last-child {
+        width: 33.3333%;
+    }
+}
+
+/* Footer: Contact Form */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+
+.form.sent {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.form input,
+.form textarea {
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-bottom: 1em;
+    padding: 0.25em;
+    resize: none;
+    width: 95%;
+}
+
+.form label {
+    display: block;
+    padding-bottom: .25em;
+    padding-left: 8px;
+    width: 100%;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+    box-shadow: 0 0 5px #000;
+    color: var(--blue);
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 1em;
+    padding: .5em 1em;
+    transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--blue-light);
+    box-shadow: 0 0 0 #000;
+    transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+a.btn {
+    color: var(--blue);
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+    text-align: center;
+    width: 50%;
+}
+
+.form-sent {
+    display: none;
+}
+
+.form-sent.sent {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer: Address */
+
+
+/* Footer: Map */
+
+#map {
+    height: 300px;
+}
