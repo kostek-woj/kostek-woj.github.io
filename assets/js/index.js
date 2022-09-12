@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     formBtn.addEventListener('click', (e) => {
         e.preventDefault();
         
-        name = form.querySelector('#contact-form input[name="contact-name"]').value;
+        name = form.querySelector('#contact-name').value;
         
         formSentPersonalMessage.textContent = `Thank you for your message, ${name}!`;
         
