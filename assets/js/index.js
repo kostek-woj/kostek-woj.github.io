@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
         name = document.getElementById('contact-name').value;
         
-        formSentPersonalMessage.textContent = `Thank you for your message, ${name}!`;
+        formSentPersonalMessage.textContent = 'Thank you for your message' + (name.length ? ', ' + name : '') + '!';
         
         form.classList.add('sent');
 
