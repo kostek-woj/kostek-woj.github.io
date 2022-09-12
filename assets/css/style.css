@@ -546,7 +546,7 @@ footer {
 }
 
 a.btn {
-    border-color: transparent;
+    border-bottom: 0px solid transparent;
     color: var(--blue);
     display: block;
     margin: 0 auto;
